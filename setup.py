@@ -3,8 +3,8 @@ import re as regex
 
 import setuptools
 
-PACKAGE_NAME = "discord-cx-pydantic"
-DESCRIPTION = "Discord Chat Exporter (by Tyrrrz) parser to robustly typed Pydantic V2 objects (no affiliation with Discord nor Tyrrrz)"
+PACKAGE_NAME = "dcx-pd"
+DESCRIPTION = "Discord Chat Exporter (by Tyrrrz) json output parser to typed Pydantic V2 objects (no affiliation with Discord nor Tyrrrz)"
 
 
 def main():

@@ -1,7 +1,7 @@
 import json
 import pathlib as p
 
-import discord_cx_pydantic as dcx
+import dcx_pd as dcx
 from tcrutils.console import c
 
 PATHS = [

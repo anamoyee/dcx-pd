@@ -1,4 +1,4 @@
-graft discord-cx-pydantic
+graft dcx_pd
 include pyproject.toml
 include setup.py
 include requirements.txt
