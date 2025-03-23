@@ -4,7 +4,7 @@ import sys
 
 from setup import PACKAGE_NAME, VERSION_REGEX
 
-version_file = p.Path(f"./{PACKAGE_NAME}/_version.py")
+version_file = p.Path(f"./{PACKAGE_NAME.replace('-', '_')}/_version.py")
 
 
 def main() -> str:

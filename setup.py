@@ -8,7 +8,7 @@ DESCRIPTION = "Discord Chat Exporter (by Tyrrrz) json output parser to typed Pyd
 
 
 def main():
-	version_file = p.Path(f"./{PACKAGE_NAME}/_version.py")
+	version_file = p.Path(f"./{PACKAGE_NAME.replace('-', '_')}/_version.py")
 
 	__version__ = regex.search(VERSION_REGEX, version_file.read_text()).group(1)
 
