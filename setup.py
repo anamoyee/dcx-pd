@@ -27,7 +27,6 @@ def main():
 		classifiers=[
 			"Development Status :: 3 - Alpha",
 			"Intended Audience :: Developers",
-			"Programming Language :: Python :: 3.12",
 			"Programming Language :: Python :: 3.13",
 			"Programming Language :: Python :: 3 :: Only",
 			"Typing :: Typed",
@@ -38,7 +37,7 @@ def main():
 			"Operating System :: Microsoft :: Windows",
 			"Operating System :: Microsoft :: MS-DOS",
 		],
-		python_requires=">=3.12",
+		python_requires=">=3.13",
 		extras_require=find_all_extras(),
 		install_requires=p.Path("./requirements.txt").read_text().strip().split(),
 		packages=setuptools.find_packages(),

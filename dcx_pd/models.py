@@ -171,7 +171,7 @@ class Reaction(_BM):
 
 
 class MessageReference(_BM):
-	message_id: int
+	message_id: int | None
 	channel_id: int
 	guild_id: int | None
 
@@ -202,12 +202,19 @@ class Message(_BM):
 
 
 class Export(_BM):
+	def __init__(self, **data):
+		data.pop("message_count", None)
+		super().__init__(**data)
+
 	guild: Guild
 	channel: Channel
 	date_range: DateRange
 	exported_at: _dt.datetime
-	message_count: int = _pd.Field(exclude=True)  # excluded due to possible desync with len(self.messages)
 	messages: list[Message]
+
+	@property
+	def message_count(self):
+		return len(self.messages)
 
 	@classmethod
 	def from_strjson(cls, s: str):
