@@ -42,6 +42,11 @@ def main():
 		install_requires=p.Path("./requirements.txt").read_text().strip().split(),
 		packages=setuptools.find_packages(),
 		include_package_data=True,
+		entry_points={
+			"console_scripts": [
+				"dcx = dcx_pd.__main__:main",
+			],
+		},
 	)
 
 

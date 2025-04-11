@@ -30,7 +30,7 @@ def __root__(*paths: p.Path):
 	"""\x1b[1mInteractively filter & search through a Discord Chat Exporter export.\x1b[0m
 
 	Args:
-		path: \x1b[1mPath to a Discord Chat Exporter export in `.json` format.\x1b[0m
+		paths: \x1b[1mPaths to a Discord Chat Exporter export in `.json` format. (space-separated)\x1b[0m
 	"""  # noqa: D400
 
 	exports = []
@@ -85,8 +85,12 @@ def __root__(*paths: p.Path):
 		pass
 
 
-if __name__ == "__main__":
+def main():
 	arguably.run(
-		version_flag=("-V", "--version"),
+		# version_flag=("-V", "--version"),
 		show_types=False,
 	)
+
+
+if __name__ == "__main__":
+	main()
