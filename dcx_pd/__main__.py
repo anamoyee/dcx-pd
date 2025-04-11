@@ -33,6 +33,10 @@ def __root__(*paths: p.Path):
 		paths: \x1b[1mPaths to a Discord Chat Exporter export in `.json` format. (space-separated)\x1b[0m
 	"""  # noqa: D400
 
+	if len(paths) == 0:
+		nay_print("[b][red]No paths provided, exiting...[/][/b]", escape_markup_obj=False)
+		return
+
 	exports = []
 	for path in paths:
 		path = path.resolve()
@@ -66,6 +70,7 @@ def __root__(*paths: p.Path):
 			return
 
 	yay_print(f"[b][yellow]Loaded [/][white]{commafy(n := sum(len(export.messages) for export in exports))}[/][yellow] message{plural_s(n)} ([/][white]mem: {get_memory_usage_mb():.2f}MB[/][yellow])[/][/b]", escape_markup_obj=False)
+	yay_print(f"[b][blue](i)[/] [yellow]Variables [/][white][u]export[/u][/][yellow] and [/][white][u]exports[/u][/][yellow] contain [white][u]exports\\[0][/u][/][yellow] and the [white][u]list\\[dcx.Export][/u][/][yellow] itself respectively[/b]", escape_markup_obj=False)
 
 	context: dict[str, Any] = {
 		"export": exports[0] if exports else None,
